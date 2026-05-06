@@ -1,0 +1,135 @@
+{
+  "gap1_macro_comparison": {
+    "model_a_borrower_only": {
+      "test_auc": 0.7102524808431085,
+      "val_auc": 0.7318024950362587,
+      "test_metrics": {
+        "roc_auc": 0.7102524808431085,
+        "pr_auc": 0.4666080008066017,
+        "brier": 0.21000403314884553,
+        "tn": 95184,
+        "fp": 46289,
+        "fn": 19959,
+        "tp": 33919
+      }
+    },
+    "model_b_borrower_macro": {
+      "test_auc": 0.7073026941345134,
+      "val_auc": 0.7301797338384056,
+      "test_metrics": {
+        "roc_auc": 0.7073026941345134,
+        "pr_auc": 0.4658029169871976,
+        "brier": 0.21853082413064298,
+        "tn": 89905,
+        "fp": 51568,
+        "fn": 18105,
+        "tp": 35773
+      }
+    },
+    "macro_lift_test": -0.002949786708595137,
+    "bootstrap_95ci": {
+      "mean": -0.0029163902384039984,
+      "ci_low": -0.0033241642145856037,
+      "ci_high": -0.002279341207573149,
+      "n_boot": 100
+    },
+    "macro_cols_used": [
+      "FEDFUNDS",
+      "UNRATE",
+      "FEDFUNDS_lag1",
+      "FEDFUNDS_lag3",
+      "FEDFUNDS_lag6",
+      "FEDFUNDS_chg1",
+      "FEDFUNDS_chg3",
+      "FEDFUNDS_roll3",
+      "FEDFUNDS_roll6",
+      "UNRATE_lag1",
+      "UNRATE_lag3",
+      "UNRATE_lag6",
+      "UNRATE_chg1",
+      "UNRATE_chg3",
+      "UNRATE_roll3",
+      "UNRATE_roll6"
+    ]
+  },
+  "gap2_regime_evaluation": [
+    {
+      "Year": 2015,
+      "Regime": "Expansion",
+      "N_loans": 213873,
+      "Default_rate": 0.20458870451155592,
+      "AUC_borrower": 0.7548954030128647,
+      "AUC_macro": 0.7551555079000621,
+      "Macro_lift": 0.0002601048871974099
+    },
+    {
+      "Year": 2016,
+      "Regime": "Expansion",
+      "N_loans": 298553,
+      "Default_rate": 0.24685734191249126,
+      "AUC_borrower": 0.7229516603040897,
+      "AUC_macro": 0.720688821868068,
+      "Macro_lift": -0.002262838436021708
+    },
+    {
+      "Year": 2017,
+      "Regime": "Expansion",
+      "N_loans": 178817,
+      "Default_rate": 0.27214973967799483,
+      "AUC_borrower": 0.711086895075465,
+      "AUC_macro": 0.7080229642992896,
+      "Macro_lift": -0.0030639307761753942
+    },
+    {
+      "Year": 2018,
+      "Regime": "Expansion",
+      "N_loans": 65142,
+      "Default_rate": 0.2716833993429738,
+      "AUC_borrower": 0.7065242968308015,
+      "AUC_macro": 0.7036224691290531,
+      "Macro_lift": -0.002901827701748405
+    }
+  ],
+  "gap3_stress_simulation": [
+    {
+      "Scenario": "Baseline",
+      "delta_UNRATE": 0.0,
+      "delta_FEDFUNDS": 0.0,
+      "mean_P_default": 0.2325818939403042,
+      "high_risk_pct": 0.39252934461558936,
+      "AUC": 0.7073026941345134,
+      "delta_mean_P": 0.0,
+      "delta_highrisk": 0.0
+    },
+    {
+      "Scenario": "Mild Recession",
+      "delta_UNRATE": 2.0,
+      "delta_FEDFUNDS": -1.0,
+      "mean_P_default": 0.21937960560937808,
+      "high_risk_pct": 0.3548945231915885,
+      "AUC": 0.708707449637787,
+      "delta_mean_P": -0.013202288330926126,
+      "delta_highrisk": -0.037634821424000875
+    },
+    {
+      "Scenario": "Severe Recession",
+      "delta_UNRATE": 4.0,
+      "delta_FEDFUNDS": -2.0,
+      "mean_P_default": 0.20390469964690444,
+      "high_risk_pct": 0.32174393783497396,
+      "AUC": 0.7101912490516321,
+      "delta_mean_P": -0.028677194293399766,
+      "delta_highrisk": -0.0707854067806154
+    },
+    {
+      "Scenario": "Rate Shock",
+      "delta_UNRATE": 1.0,
+      "delta_FEDFUNDS": 3.0,
+      "mean_P_default": 0.23219387653503087,
+      "high_risk_pct": 0.38963199574099955,
+      "AUC": 0.7068677770227962,
+      "delta_mean_P": -0.00038801740527333317,
+      "delta_highrisk": -0.0028973488745898113
+    }
+  ]
+}

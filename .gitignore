@@ -1,0 +1,5 @@
+data/
+__pycache__/
+*.csv
+*.zip
+Random Extra Files/
